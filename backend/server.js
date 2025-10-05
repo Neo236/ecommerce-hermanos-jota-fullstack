@@ -1,12 +1,13 @@
 const express = require('express');
+const cors = require('cors');
 
 const productRoutes = require('./routes/productRoutes');
-
-
 const app = express();
 const PORT = 3001;
 
 // --- MIDDLEWARES ---
+
+app.use(cors());
 
 // 1. Middleware global para loguear peticiones
 app.use((req, res, next) => {
